@@ -1,13 +1,40 @@
-function displayWeather(data) {
-    errorMessage.style.display = 'none';
-    
-    document.getElementById('cityName').innerHTML = `<h2>${data.name}, ${data.sys.country}</h2>`;
-    document.getElementById('temperature').innerHTML = `<h1>${Math.round(data.main.temp)}°C</h1>`;
-    document.getElementById('weatherDescription').innerHTML = `<p>${data.weather[0].description}</p>`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <p>Get weather updates for any city</p>
+        </header>
 
-    // Added details
-    document.getElementById('feelsLike').innerText = `Feels like: ${Math.round(data.main.feels_like)}°C`;
-    document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity}%`;
-    document.getElementById('wind').innerText = `Wind: ${data.wind.speed} m/s`;
-    document.getElementById('pressure').innerText = `Pressure: ${data.main.pressure} hPa`;
-}
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Enter city name..." class="search-input">
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="locationBtn" class="location-btn">Use My Location</button>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div id="weatherContainer" class="weather-container">
+            <div id="cityName"></div>
+            <div id="temperature"></div>
+            <div id="weatherDescription"></div>
+            
+            <div class="weather-details">
+                <div id="feelsLike"></div>
+                <div id="humidity"></div>
+                <div id="wind"></div>
+                <div id="pressure"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
