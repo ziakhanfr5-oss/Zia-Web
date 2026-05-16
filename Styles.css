@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.search-section {
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.search-btn,.location-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.search-btn {
+    background: #667eea;
+    color: white;
+}
+
+.location-btn {
+    background: #ff6b9d;
+    color: white;
+}
+
+.error-message {
+    color: red;
+    background: #ffe6e6;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: none;
+}
+
+.weather-container {
+    margin-top: 20px;
+}
