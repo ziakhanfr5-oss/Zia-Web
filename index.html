@@ -4,131 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            color: #94a3b8;
-        }
-
-        .search-section {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .search-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: #334155;
-            color: white;
-            font-size: 16px;
-        }
-
-        .search-input::placeholder {
-            color: #94a3b8;
-        }
-
-        .search-btn, .location-btn {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #3b82f6;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .location-btn {
-            background: #10b981;
-        }
-
-        .search-btn:hover, .location-btn:hover {
-            opacity: 0.9;
-        }
-
-        .error-message {
-            background: #ef4444;
-            padding: 12px;
-            border-radius: 8px;
-            display: none;
-            margin-bottom: 20px;
-        }
-
-        .weather-container {
-            background: #334155;
-            padding: 25px;
-            border-radius: 12px;
-            display: none;
-        }
-
-        #cityName h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        #temperature h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        #weatherDescription p {
-            font-size: 18px;
-            color: #cbd5e1;
-            text-transform: capitalize;
-            margin-bottom: 20px;
-        }
-
-        .weather-details {
-            border-top: 1px solid #475569;
-            padding-top: 15px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            font-size: 16px;
-        }
-
-        .weather-details div {
-            background: #1e293b;
-            padding: 10px;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -152,4 +28,13 @@
             
             <div class="weather-details">
                 <div id="feelsLike"></div>
-                <div id="humidity
+                <div id="humidity"></div>
+                <div id="wind"></div>
+                <div id="pressure"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+        </html>
