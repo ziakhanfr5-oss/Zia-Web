@@ -1,5 +1,4 @@
-* {
-    margin: 0;
+margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -53,23 +52,3 @@ header h1 {
 
 .search-btn {
     background: #667eea;
-    color: white;
-}
-
-.location-btn {
-    background: #ff6b9d;
-    color: white;
-}
-
-.error-message {
-    color: red;
-    background: #ffe6e6;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px 0;
-    display: none;
-}
-
-.weather-container {
-    margin-top: 20px;
-}
