@@ -4,7 +4,7 @@ const searchInput = document.getElementById('searchInput');
 const errorMessage = document.getElementById('errorMessage');
 const weatherContainer = document.getElementById('weatherContainer');
 
-const API_KEY = 'YOUR_API_KEY';
+const API_KEY = '8fdcfd4345a9b4242d0b50278322a916';
 
 searchBtn.addEventListener('click', () => {
     const city = searchInput.value.trim();
