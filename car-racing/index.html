@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Car Racing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>⚡ NEON RACER ⚡</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Speed:</span>
+                    <span class="value" id="speed">5</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Lives:</span>
+                    <span class="value" id="lives">3</span>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+        <div class="instructions">
+            <p>🎮 <strong>Controls:</strong> Arrow Keys (← →) or Touch/Swipe to move</p>
+            <p>🚗 <strong>Goal:</strong> Avoid obstacles and survive as long as possible!</p>
+        </div>
+
+        <div class="game-over hidden" id="gameOverScreen">
+            <div class="game-over-content">
+                <h2>GAME OVER</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="restart-btn">🔄 Play Again</button>
+            </div>
+        </div>
+
+        <button id="startBtn" class="start-btn">▶ Start Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
