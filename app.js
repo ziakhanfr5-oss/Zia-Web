@@ -52,7 +52,8 @@ async function getWeatherByCity(city) {
 // Get weather by coordinates
 async function getWeatherByCoords(lat, lon) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=en`);
+        if(!response.ok) throw new Error('Location not found');
         const data = await response.json();
         displayWeather(data);
     } catch(error) {
