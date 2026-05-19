@@ -4,63 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zia Weather Pro</title>
+
+<!-- Open Graph tags for WhatsApp/Facebook preview -->
+<meta property="og:title" content="Zia Weather Pro" />
+<meta property="og:description" content="Check weather for any city" />
+<meta property="og:image" content="https://ziakhan-website.github.io/zia.website/preview.jpg" />
+<meta property="og:url" content="https://ziakhan-website.github.io/zia.website/" />
+<meta property="og:type" content="website" />
+
 <link rel="stylesheet" href="script.css">
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <div class="logo">🌦️ Weather Pro</div>
-    <button class="toggle-btn" id="themeBtn">🌙 Dark</button>
-  </div>
-
-  <div class="search-box">
-    <input type="text" id="cityInput" placeholder="Search for a city...">
-    <button id="searchBtn">Search</button>
-    <button id="locationBtn">📍 My Location</button>
-  </div>
-
-  <div class="loading" id="loading">Getting weather data...</div>
-
-  <div class="weather-wrapper" id="weatherWrapper">
-    <div class="weather-card main-card">
-      <div class="weather-main">
-        <div>
-          <div class="city" id="cityName"></div>
-          <div class="temp" id="temp"></div>
-          <div class="desc" id="desc"></div>
-        </div>
-        <img class="weather-icon" id="weatherIcon" src="" alt="">
-      </div>
-      <div class="details">
-        <div class="detail-box">
-          <h4>Humidity</h4>
-          <p id="humidity"></p>
-        </div>
-        <div class="detail-box">
-          <h4>Wind</h4>
-          <p id="wind"></p>
-        </div>
-        <div class="detail-box">
-          <h4>Pressure</h4>
-          <p id="pressure"></p>
-        </div>
-        <div class="detail-box">
-          <h4>Feels Like</h4>
-          <p id="feelsLike"></p>
-        </div>
-      </div>
+    <div class="header">
+        <div class="logo">🌦️ Weather Pro</div>
+        <button class="toggle-btn" id="themeBtn">🌙 Dark</button>
     </div>
 
-    <div class="forecast-card">
-      <h3>Hourly Forecast</h3>
-      <div class="hourly-scroll" id="hourlyForecast"></div>
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Search for a city...">
+        <button id="searchBtn">Search</button>
+        <button id="locationBtn">📍 My Location</button>
     </div>
 
-    <div class="forecast-card">
-      <h3>5-Day Forecast</h3>
-      <div class="daily-forecast" id="dailyForecast"></div>
+    <div class="loading" id="loading">Getting weather data..</div>
+
+    <div class="weather-wrapper" id="weatherWrapper">
+        <div class="weather-card main-card">
+            <div class="weather-main">
+                <div>
+                    <div class="city" id="cityName"></div>
+                    <div class="temp" id="temp"></div>
+                    <div class="desc" id="desc"></div>
+                </div>
+                <img class="weather-icon" id="weatherIcon" src="" alt="">
+            </div>
+            <div class="details">
+                <div class="detail-box">
+                    <h4>Humidity</h4>
+                    <p id="humidity"></p>
+                </div>
+                <div class="detail-box">
+                    <h4>Wind</h4>
+                    <p id="wind"></p>
+                </div>
+                <div class="detail-box">
+                    <h4>Pressure</h4>
+                    <p id="pressure"></p>
+                </div>
+                <div class="detail-box">
+                    <h4>Feels Like</h4>
+                    <p id="feelsLike"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="forecast-card">
+            <h3>Hourly Forecast</h3>
+            <div class="hourly-scroll" id="hourlyForecast"></div>
+        </div>
+
+        <div class="forecast-card">
+            <h3>5-Day Forecast</h3>
+            <div class="daily-forecast" id="dailyForecast"></div>
+        </div>
     </div>
-  </div>
 </div>
 <script src="script.js"></script>
 </body>
