@@ -5,34 +5,50 @@ async function getWeather() {
   const resultDiv = document.getElementById('result');
 
   if (!city) {
-    resultDiv.innerHTML = `<p style="color:red;">Please enter a city name</p>`;
+    alert("Please enter a city name");
     return;
   }
 
   resultDiv.innerHTML = "Loading...";
+  resultDiv.classList.remove("hide");
 
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     const response = await fetch(url);
-    
-    if (!response.ok) {
-      throw new Error("City not found. Check spelling.");
-    }
-    
+
+    if (!response.ok) throw new Error("City not found");
     const data = await response.json();
-    
+
+    const icon = getWeatherIcon(data.weather[0].main);
+
     resultDiv.innerHTML = `
-      <h3>${data.name}, ${data.sys.country}</h3>
-      <p><b>Temperature:</b> ${data.main.temp}°C</p>
-      <p><b>Weather:</b> ${data.weather[0].description}</p>
-      <p><b>Humidity:</b> ${data.main.humidity}%</p>
-      <p><b>Wind:</b> ${data.wind.speed} m/s</p>
+      <div class="weather-icon">${icon}</div>
+      <h2>${data.name}, ${data.sys.country}</h2>
+      <h1>${Math.round(data.main.temp)}°C</h1>
+      <p><b>${data.weather[0].description}</b></p>
+      <p>💧 Humidity: ${data.main.humidity}%</p>
+      <p>💨 Wind: ${data.wind.speed} m/s</p>
     `;
   } catch (error) {
     resultDiv.innerHTML = `<p style="color:red;">${error.message}</p>`;
   }
 }
 
+function getWeatherIcon(condition) {
+  switch(condition.toLowerCase()) {
+    case 'clear': return '☀️';
+    case 'clouds': return '☁️';
+    case 'rain': return '🌧️';
+    case 'thunderstorm': return '⛈️';
+    case 'snow': return '❄️';
+    case 'mist':
+    case 'fog': return '🌫️';
+    default: return '🌤️';
+  }
+}
+
 function toggleTheme() {
   document.body.classList.toggle('dark');
+  const btn = document.getElementById('themeBtn');
+  btn.textContent = document.body.classList.contains('dark')? '☀️ Light' : '🌙 Dark';
 }
