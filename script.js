@@ -90,4 +90,4 @@ async function getWeather() {
     console.log(error);
     document.getElementById('loading').style.display = 'none';
   }
-      }
+}
