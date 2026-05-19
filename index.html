@@ -3,49 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zia Weather Dashboard</title>
+<title>Zia Weather Pro</title>
 <link rel="stylesheet" href="script.css">
 </head>
 <body>
 <div class="container">
   <div class="header">
-    <div class="logo">🌤️ Zia Weather</div>
+    <div class="logo">🌦️ Weather Pro</div>
     <button class="toggle-btn" id="themeBtn">🌙 Dark</button>
   </div>
 
   <div class="search-box">
-    <input type="text" id="cityInput" placeholder="Enter city name...">
+    <input type="text" id="cityInput" placeholder="Search for a city...">
     <button id="searchBtn">Search</button>
   </div>
 
-  <div class="loading" id="loading">Loading...</div>
+  <div class="loading" id="loading">Getting weather data...</div>
 
-  <div class="weather-card" id="weatherCard">
-    <div class="weather-main">
-      <div>
-        <div class="city" id="cityName"></div>
-        <div class="temp" id="temp"></div>
-        <div class="desc" id="desc"></div>
+  <div class="weather-wrapper" id="weatherWrapper">
+    <div class="weather-card main-card">
+      <div class="weather-main">
+        <div>
+          <div class="city" id="cityName"></div>
+          <div class="temp" id="temp"></div>
+          <div class="desc" id="desc"></div>
+        </div>
+        <img class="weather-icon" id="weatherIcon" src="" alt="">
       </div>
-      <img class="weather-icon" id="weatherIcon" src="" alt="">
+      <div class="details">
+        <div class="detail-box">
+          <h4>Humidity</h4>
+          <p id="humidity"></p>
+        </div>
+        <div class="detail-box">
+          <h4>Wind</h4>
+          <p id="wind"></p>
+        </div>
+        <div class="detail-box">
+          <h4>Pressure</h4>
+          <p id="pressure"></p>
+        </div>
+        <div class="detail-box">
+          <h4>Feels Like</h4>
+          <p id="feelsLike"></p>
+        </div>
+      </div>
     </div>
-    <div class="details">
-      <div class="detail-box">
-        <h4>Humidity</h4>
-        <p id="humidity"></p>
-      </div>
-      <div class="detail-box">
-        <h4>Wind Speed</h4>
-        <p id="wind"></p>
-      </div>
-      <div class="detail-box">
-        <h4>Pressure</h4>
-        <p id="pressure"></p>
-      </div>
-      <div class="detail-box">
-        <h4>Feels Like</h4>
-        <p id="feelsLike"></p>
-      </div>
+
+    <div class="forecast-card">
+      <h3>Hourly Forecast</h3>
+      <div class="hourly-scroll" id="hourlyForecast"></div>
+    </div>
+
+    <div class="forecast-card">
+      <h3>7-Day Forecast</h3>
+      <div class="daily-forecast" id="dailyForecast"></div>
     </div>
   </div>
 </div>
