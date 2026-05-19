@@ -22,30 +22,24 @@ async function getWeather() {
   if (!city) return alert('Please enter a city name');
 
   document.getElementById('loading').style.display = 'block';
-  document.getElementById('weatherCard').style.display = 'none';
+  document.getElementById('weatherWrapper').style.display = 'none';
 
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-    const data = await response.json();
-
-    if (data.cod === 200) {
-      document.getElementById('cityName').textContent = data.name + ', ' + data.sys.country;
-      document.getElementById('temp').textContent = Math.round(data.main.temp) + '°C';
-      document.getElementById('desc').textContent = data.weather[0].description;
-      document.getElementById('humidity').textContent = data.main.humidity + '%';
-      document.getElementById('wind').textContent = data.wind.speed + ' km/h';
-      document.getElementById('pressure').textContent = data.main.pressure + ' hPa';
-      document.getElementById('feelsLike').textContent = Math.round(data.main.feels_like) + '°C';
-      document.getElementById('weatherIcon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
-
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('weatherCard').style.display = 'block';
-    } else {
+    // Current weather
+    const currentRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+    const currentData = await currentRes.json();
+    
+    if (currentData.cod !== 200) {
       alert('City not found!');
       document.getElementById('loading').style.display = 'none';
+      return;
     }
-  } catch (error) {
-    alert('Error fetching weather data');
-    document.getElementById('loading').style.display = 'none';
-  }
-      }
+
+    // One Call API for hourly and daily
+    const lat = currentData.coord.lat;
+    const lon = currentData.coord.lon;
+    const forecastRes = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,alerts&appid=${API_KEY}&units=metric`);
+    const forecastData = await forecastRes.json();
+
+    // Display current weather
+    document.getElementBy
