@@ -3,28 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WeatherPro</title>
-<link rel="stylesheet" href="style.css">
-<meta property="og:title" content="Zia Weather Dashboard">
-<meta property="og:description" content="Get weather updates for any city">
-<meta property="og:image" content="https://ziakhanfr5-oss.github.io/preview.jpg">
-<meta property="og:url" content="https://ziakhanfr5-oss.github.io/">
-<meta property="og:type" content="website">
+<title>Zia Weather Dashboard</title>
+<link rel="stylesheet" href="script.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🌤 WeatherPro</h1>
-    
-    <button id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
-    
-    <div class="search-box">
-      <input type="text" id="city" placeholder="Enter city name">
-      <button onclick="getWeather()">Search</button>
-    </div>
-
-    <div id="result" class="weather-card hide"></div>
+<div class="container">
+  <div class="header">
+    <div class="logo">🌤️ Zia Weather</div>
+    <button class="toggle-btn" id="themeBtn">🌙 Dark</button>
   </div>
 
+  <div class="search-box">
+    <input type="text" id="cityInput" placeholder="Enter city name...">
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <div class="loading" id="loading">Loading...</div>
+
+  <div class="weather-card" id="weatherCard">
+    <div class="weather-main">
+      <div>
+        <div class="city" id="cityName"></div>
+        <div class="temp" id="temp"></div>
+        <div class="desc" id="desc"></div>
+      </div>
+      <img class="weather-icon" id="weatherIcon" src="" alt="">
+    </div>
+    <div class="details">
+      <div class="detail-box">
+        <h4>Humidity</h4>
+        <p id="humidity"></p>
+      </div>
+      <div class="detail-box">
+        <h4>Wind Speed</h4>
+        <p id="wind"></p>
+      </div>
+      <div class="detail-box">
+        <h4>Pressure</h4>
+        <p id="pressure"></p>
+      </div>
+      <div class="detail-box">
+        <h4>Feels Like</h4>
+        <p id="feelsLike"></p>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
-</html>
+  </html>
