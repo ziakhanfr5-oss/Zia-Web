@@ -1,4 +1,4 @@
-index.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -147,7 +147,7 @@ button:disabled {
   </div>
 
   <div class="key-setup" id="keySetup">
-    <p style="color:#fca5a5;font-size:14px">⚠️ Security: API key code me nahi rakh sakte. Apni Groq key yahan daalo, ye sirf tumhare browser me save hogi.</p>
+    <p style="color:#fca5a5;font-size:14px">⚠️ Security: API key code me nahi rakh sakte. Apni Groq key yahan daalo.</p>
     <input id="apiKeyInput" type="password" placeholder="gsk_xxxxxxxxxxxxx">
     <button onclick="saveKey()" style="width:100%;margin-top:10px;">Save & Start</button>
     <p style="color:#a1a1aa;font-size:12px;margin-top:10px">Key nahi hai? <a href="https://console.groq.com/keys" target="_blank" style="color:#c4b5fd;">Free key yahan se banao</a></p>
@@ -208,7 +208,7 @@ async function sendMsg() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-70b-versatile",
+        model: "llama-3.3-70b-versatile",
         messages: [{role: "user", content: msg}]
       })
     });
@@ -236,4 +236,4 @@ function addMsg(text, type) {
 }
 </script>
 </body>
-</html>
+  </html>
